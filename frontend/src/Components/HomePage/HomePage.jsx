@@ -32,15 +32,16 @@ console.log(data);
       {
         data.map((e) => (
           <div className='movieCard'>
-            {/* <p>{e.Image}</p> */}
-            <img src={e.Image} alt="" />
+            <img className="img" src={e.Image} alt="" />
+            <div className="details">
             <p>Name :- {e.Name}</p>
             <p>Title :- {e.Title}</p>
             <p>Category:- {e.Category}</p>
-            <p>Rating :-{e.Rating}</p>
-            <p>Price :- {e.Price}</p>
-            
-            <Button onClick = {() =>{
+            <p>Rating :- {e.Rating}</p>
+            <p>Price :- $ {e.Price}</p>
+            </div>
+            <div className="btn">
+            <Button  onClick = {() =>{
               console.log(e._id); 
               navigate(`/edit/${e._id}`)
             }} >Edit</Button>
@@ -49,7 +50,7 @@ console.log(data);
             handleDelete(e._id)
             }} >Delete</Button>
 
-
+            </div>
           </div>
         ))
       }

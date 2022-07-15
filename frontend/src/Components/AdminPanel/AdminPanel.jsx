@@ -89,7 +89,7 @@ export default function AdminPanel() {
           }} /><br />
 
           {/* Rating Input */}
-          <TextField id="standard-basic" label="rating" variant="standard" onChange={(e) => {
+          <TextField id="standard-basic" label="Rating" variant="standard" onChange={(e) => {
             setRating(e.target.value)
           }} /><br />
 
