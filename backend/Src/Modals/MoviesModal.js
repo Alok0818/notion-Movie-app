@@ -4,7 +4,7 @@ const moviesSchema = new mongoose.Schema(
   {
     name: { type: String, require: true },
     Title: { type: String, require: true },
-    rating: { type: Number, require: true },
+    Rating: { type: Number, require: true },
     Category: { type: String, require: true },
     Price: { type: Number, require: true },
   },
