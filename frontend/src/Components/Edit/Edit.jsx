@@ -106,6 +106,7 @@ export default function Edit() {
               <MenuItem value={"Action"}>Action</MenuItem>
               <MenuItem value={"Adventure"}>Adventure</MenuItem>
               <MenuItem value={"Horror"}>Horror</MenuItem>
+              <MenuItem value={"Comedy"}>Comedy</MenuItem>
             </Select>
           </FormControl> <br /><br />
 

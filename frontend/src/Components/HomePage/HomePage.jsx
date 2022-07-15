@@ -25,9 +25,81 @@ console.log(data);
 
   }
 
+  function handlesortprice(e) {
+    if (e.target.value === "low") {
+      // getdata.sort((first, second) => first.username - second.username);
+      data.sort((a, b) => a.Price - b.Price)
+      setData([...data]);
+    } 
+    else if (e.target.value === "high") {
+      data.sort((a, b) => b.Price-a.Price)
+      setData([...data]);
+    }
+  }
+
+  function handlesortrating(e) {
+    if (e.target.value === "low") {
+      // getdata.sort((first, second) => first.username - second.username);
+      data.sort((a, b) => a.Rating - b.Rating)
+      setData([...data]);
+    } 
+    else if (e.target.value === "high") {
+      data.sort((a, b) => b.Rating-a.Rating)
+      setData([...data]);
+    }
+  }
+
+  function handlesortcategory(e) {
+    if (e.target.value === "low") {
+      // getdata.sort((first, second) => first.username - second.username);
+      data.sort((a, b) => a.Category - b.Category)
+      setData([...data]);
+    } 
+    else if (e.target.value === "high") {
+      data.sort((a, b) => b.Category-a.Category)
+      setData([...data]);
+    }
+  }
+
   return (
-    <div>
+    <div className="main">
       {/* <h1>home</h1> */}
+      <div className="filter">
+      <span >
+      <h2>SORT BY PRICE</h2>
+          <button className="btn1" value={"high"} onClick={handlesortprice}>
+            HIGH
+          </button><br /><br />
+          <button className="btn1" value={"low"} onClick={handlesortprice}>
+            LOW
+          </button>
+      </span>
+      <span>
+      <h2>SORT BY Rating</h2>
+          <button className="btn1" value={"high"} onClick={handlesortrating}>
+            HIGH
+          </button><br /><br />
+          <button className="btn1" value={"low"} onClick={handlesortrating}>
+            LOW
+          </button>
+      </span>
+      {/* <span>
+      <h2>SORT BY Category</h2>
+          <button className="btn1" value={"Action"} onClick={handlesortcategory}>
+          Action
+          </button><br /><br />
+          <button className="btn1" value={"Adventure"} onClick={handlesortcategory}>
+          Adventure
+          </button><br /><br />
+          <button className="btn1" value={"Horror"} onClick={handlesortcategory}>
+          Horror
+          </button><br /><br />
+          <button className="btn1" value={"Comedy"} onClick={handlesortcategory}>
+          Comedy
+          </button>
+      </span> */}
+      </div>
+          
       <div className='moviebox'>
       {
         data.map((e) => (
