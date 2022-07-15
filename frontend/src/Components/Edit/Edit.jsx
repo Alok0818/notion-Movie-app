@@ -24,7 +24,7 @@ export default function Edit() {
 
     console.log(id,data);
     useEffect(()=>{
-        axios.get(`http://localhost:2344/movies/id/${id}`).then((res) => {setData(res.data); setImage(res.data.Image); setName(res.data.Name); setTitle(res.data.Title); setRating(res.data.Rating); setCategory(res.data.Category); setPrice(res.data.Price) })
+        axios.get(`https://notionmovies.herokuapp.com/movies/id/${id}`).then((res) => {setData(res.data); setImage(res.data.Image); setName(res.data.Name); setTitle(res.data.Title); setRating(res.data.Rating); setCategory(res.data.Category); setPrice(res.data.Price) })
     },[])
 
 
@@ -44,7 +44,7 @@ export default function Edit() {
         }
         if (Title.length  >= 3) {
           console.log("data", data, id)
-          axios.patch(`http://localhost:2344/movies/${id}`, data).then((res) => console.log(res.data)).then(() => navigate("/"))
+          axios.patch(`https://notionmovies.herokuapp.com/movies/${id}`, data).then((res) => console.log(res.data)).then(() => navigate("/"))
         }
         else {
           alert("Description is to short")
@@ -53,7 +53,7 @@ export default function Edit() {
     
       const handleDeleteCard = () => {
         console.log("deke")
-        axios.delete(`http://localhost:2344/movies/${id}`).then((res) => alert("Card Deleted Successfully")).then(() => navigate("/"))
+        axios.delete(`https://notionmovies.herokuapp.com/movies/${id}`).then((res) => alert("Card Deleted Successfully")).then(() => navigate("/"))
     
       }
 

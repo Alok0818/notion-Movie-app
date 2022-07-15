@@ -36,7 +36,7 @@ export default function AdminPanel() {
 
     if (Title.length  >= 3) {
       console.log("data", data)
-      axios.post("http://localhost:2344/movies", data).then((res) => console.log(res.data)).then(() => navigate("/"))
+      axios.post("https://notionmovies.herokuapp.com/movies", data).then((res) => console.log(res.data)).then(() => navigate("/"))
     }
     else {
       console.log("length kkk",Title.length)
@@ -55,7 +55,7 @@ export default function AdminPanel() {
 
   const handleEdit = (e) => {
     e.preventDefault()
-    axios.get("http://localhost:2344/movies").then((res) => setData(res.data)).then(() => navigate("/update"))
+    axios.get("https://notionmovies.herokuapp.com/movies").then((res) => setData(res.data)).then(() => navigate("/update"))
     console.log("aaaya", data);
     
     

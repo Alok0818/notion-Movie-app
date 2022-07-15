@@ -15,13 +15,13 @@ console.log(data);
 
 
   function getData(){
-    axios.get("http://localhost:2344/movies").then((res)=> {setData(res.data); console.log(res.data)}).catch((err)=> console.log(err));
+    axios.get("https://notionmovies.herokuapp.com/movies").then((res)=> {setData(res.data); console.log(res.data)}).catch((err)=> console.log(err));
   }
 
   const handleDelete = (id) => {
     // console.log("deke", id)
 
-    axios.delete(`http://localhost:2344/movies/${id}`).then((res) => {getData()})
+    axios.delete(`https://notionmovies.herokuapp.com/movies/${id}`).then((res) => {getData()})
 
   }
 
