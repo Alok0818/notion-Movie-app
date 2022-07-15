@@ -23,49 +23,17 @@ router.get("", async (req, res) => {
   }
 });
 
-// router.get("/To_Do", async (req, res) => {
-//   const query = { task: "To Do" };
-//   try {
-//     const data = await Movies.find(query).lean().exec();
-//     console.log(data);
-//     return res.send(data);
-//   } catch (error) {
-//     return res.send(error);
-//   }
-// });
 
-// router.get("/Doing", async (req, res) => {
-//   const query = { task: "Doing" };
-//   try {
-//     const data = await Movies.find(query).lean().exec();
-//     console.log(data);
-//     return res.send(data);
-//   } catch (error) {
-//     return res.send(error);
-//   }
-// });
-
-// router.get("/Done", async (req, res) => {
-//   const query = { task: "Done" };
-//   try {
-//     const data = await Movies.find(query).lean().exec();
-//     console.log(data);
-//     return res.send(data);
-//   } catch (error) {
-//     return res.send(error);
-//   }
-// });
-
-// router.get("/id/:id", async (req, res) => {
-//   console.log(req.params.id);
-//   try {
-//     const data = await Movies.findById(req.params.id).lean().exec();
-//     console.log(data);
-//     return res.send(data);
-//   } catch (error) {
-//     return res.send(error);
-//   }
-// });
+router.get("/id/:id", async (req, res) => {
+  console.log(req.params.id);
+  try {
+    const data = await Movies.findById(req.params.id).lean().exec();
+    console.log(data);
+    return res.send(data);
+  } catch (error) {
+    return res.send(error);
+  }
+});
 
 router.patch("/:id", async (req, res) => {
   try {

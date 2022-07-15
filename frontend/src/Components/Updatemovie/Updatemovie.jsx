@@ -12,6 +12,7 @@ import axios from 'axios';
 export default function Updatemovie() {
   const { id } = useParams()
   const navigate = useNavigate()
+  const [Image, setImage] = useState("")
   const [data, setData] = useState([])
   const [Name, setName] = useState("")
   const [Title, setTitle] = useState("")
@@ -32,6 +33,7 @@ export default function Updatemovie() {
 
   const handleUpdatecard = () => {
     const data = {
+      Image,
       Name,
       Title,
       Rating,
@@ -67,6 +69,11 @@ export default function Updatemovie() {
           noValidate
           autoComplete="off"
         >
+
+          {/* image Input */}
+          <TextField id="standard-basic" label="IMage" value= {Image} variant="standard" onChange={(e) => {
+            setImage(e.target.value)
+          }} /><br />
 
           {/* Movies Name Input */}
           <TextField id="standard-basic" label="Name" value={Name} variant="standard" onChange={(e) => setName(e.target.value)} /><br />

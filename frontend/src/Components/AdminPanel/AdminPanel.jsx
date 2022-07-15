@@ -13,6 +13,7 @@ import { useNavigate } from 'react-router-dom';
 export default function AdminPanel() {
   const [data, setData] = useState([]);
   const navigate = useNavigate()
+  const [Image, setImage] = useState("")
   const [Name, setName] = useState("")
   const [Title, setTitle] = useState("")
   const [Rating, setRating] = useState("")
@@ -25,6 +26,7 @@ export default function AdminPanel() {
 
   const handleAddmovie = () => {
     const data = {
+      Image,
       Name,
       Title,
       Rating,
@@ -60,7 +62,7 @@ export default function AdminPanel() {
   }
 
   return (
-    <div>
+    <div className='addmovies'>
       <h2>Add New Movies</h2>
 
       <div>
@@ -73,6 +75,11 @@ export default function AdminPanel() {
           noValidate
           autoComplete="off"
         >
+          {/* image Input */}
+          <TextField id="standard-basic" label="Image" variant="standard" onChange={(e) => {
+            setImage(e.target.value)
+          }} /><br />
+
           {/* Movies Name Input */}
           <TextField id="standard-basic" label="Name" variant="standard" onChange={(e) => setName(e.target.value)} /><br />
 
@@ -112,10 +119,10 @@ export default function AdminPanel() {
           }} /><br />
 
           {/* Add Card Button */}
-          <Button disabled={!Name || !Title || !Rating || !Category || !Price} variant="contained" onClick={handleAddmovie} >Add Movies</Button>
+          <Button  disabled={!Image || !Name || !Title || !Rating || !Category || !Price} variant="contained" onClick={handleAddmovie} >Add Movies</Button>
 
-          {/* edit card button */}
-          <div className='EditButton'><button value={id} onClick={handleEdit}>Edit</button></div>
+          {/* edit card button
+          <div className='EditButton'><button onClick={handleEdit}>Edit</button></div> */}
         </Box>
 
       </div>

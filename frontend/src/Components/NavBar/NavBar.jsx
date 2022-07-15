@@ -10,7 +10,7 @@ export default function NavBar() {
     <div className='NavBar'>
       <div>
           <div onClick={() => navigate("/")}><p>Home</p></div>
-          <div onClick={() => navigate("/add_movies")} ><p>Admin Panel</p></div>
+          <div onClick={() => navigate("/add")} ><p>Admin Panel</p></div>
       </div>
     </div>
   )
